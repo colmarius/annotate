@@ -20,6 +20,16 @@ app.get('/db', function(req, res) {
   res.status((mongoose.connection.readyState === 1) ? 200 : 503).send();
 });
 
+function ensureRequestComesFromRightDomain(req, res, next) {
+  if (req.hostname === req.param('domain')) {
+    return next();
+  }
+  if (req.hostname === '127.0.0.1') {
+    return next();
+  }
+  res.status(403).send();
+}
+
 app.get('/:domain/:reference/comments', function(req, res) {
   Comment.find(
     {
