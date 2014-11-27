@@ -8,14 +8,14 @@ describe('annotable', function(){
     expect(annotable.PolymerBase).to.be.true;
   });
 
-  xdescribe('it works as expected', function(){
+  describe('it works as expected', function(){
     var annotable;
 
     beforeEach(function(){
       annotable = document.createElement('nn-annotable');
     });
 
-    xit('enrich the content with the comments section', function(){
+    it('enrich the content with the comments section', function(){
       expect(annotable.shadowRoot.querySelector('h3')).to.exist;
     });
 
