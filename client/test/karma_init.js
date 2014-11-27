@@ -3,11 +3,11 @@
 (function() {
   var l;
 
-  // window.__karma__.loaded = function() {
-  //   window.addEventListener('polymer-ready', function() {
-  //     window.__karma__.start();
-  //   });
-  // };
+  window.__karma__.loaded = function() {
+    window.addEventListener('polymer-ready', function() {
+      window.__karma__.start();
+    });
+  };
 
   // l = document.createElement('link');
   // l.rel = 'import';
