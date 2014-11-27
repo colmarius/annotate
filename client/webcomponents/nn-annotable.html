@@ -16,7 +16,8 @@
       url="{{baseapi}}/{{domain}}/{{nid}}/comments"
       handleAs="json"
       method="post"
-      params='{"author":"{{author}}","text":"{{text}}"}'>
+      params='{"author":"{{author}}","text":"{{text}}"}'
+      on-core-response="{{resetForm}}">
     </core-ajax>
 
     <content></content>
@@ -55,6 +56,10 @@
           return;
         }
         this.$.new_comment.go();
+      },
+      resetForm: function() {
+        this.author = "";
+        this.text = "";
       }
     });
   </script>

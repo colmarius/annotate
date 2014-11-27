@@ -61,7 +61,7 @@ describe('annotable', function(){
         expect(annotable.message).to.be.equal('completa tutti i campi');
       });
 
-      xit('does send a new comment if author and text is present', function(done){
+      it('does send a new comment if author and text is present', function(done){
         setResponse({});
         annotable.resetForm = function(){ done(); };
         annotable.text = 'some text';
