@@ -45,7 +45,7 @@ describe('annotable', function(){
       });
 
 
-      xit('retrieves data from the form and translate it into JSON', function(){
+      it('retrieves data from the form and translate it into JSON', function(){
         var newComment = annotable.shadowRoot.querySelector('#new_comment');
         annotable.text = 'some text';
         annotable.author = 'sandro.paganotti@gmail.com';

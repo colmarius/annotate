@@ -11,6 +11,14 @@
       on-core-response="{{populateComments}}">
     </core-ajax>
 
+    <core-ajax
+      id="new_comment"
+      url="{{baseapi}}/{{domain}}/{{nid}}/comments"
+      handleAs="json"
+      method="post"
+      params='{"author":"{{author}}","text":"{{text}}"}'>
+    </core-ajax>
+
     <content></content>
 
     <section>
