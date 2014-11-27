@@ -77,7 +77,7 @@ describe('annotable', function(){
         setResponse([{author: 'sandro', text: 'nice!'}]);
         annotable.nid = 1234;
         annotable.connect = false;
-        document.body.appendChild(annotable);
+        document.body.appendChild(annotable); // Add here annotable
         setTimeout(done, 200); // computation time reqired for annotable end up in DOM
       });
 
@@ -98,7 +98,7 @@ describe('annotable', function(){
       });
 
       afterEach(function(){
-        document.body.removeChild(annotable);
+        document.body.removeChild(annotable); // Remove when done
       });
 
     });
