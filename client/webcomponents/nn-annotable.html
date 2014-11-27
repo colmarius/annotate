@@ -23,6 +23,11 @@
 
     <section>
       <h3>New Annotation</h3>
+      <form id="new_comment_form" on-submit="{{newComment}}">
+        <input type="text" value="{{author}}">
+        <textarea value="{{text}}"></textarea>
+        <input type="submit">
+      </form>
     </section>
 
   </template>
