@@ -25,7 +25,7 @@ describe('annotable', function(){
       expect(function(){ annotable.attached(); }).to.not.throw();
     });
 
-    xit('retrieves the current domain ', function(){
+    it('retrieves the current domain ', function(){
       expect(annotable.domain).to.be.equal(window.location.hostname);
     });
 

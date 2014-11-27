@@ -17,6 +17,9 @@
         if (!this.nid) {
           throw 'Attribute missing: nid';
         }
+      },
+      ready: function() {
+        this.domain = window.location.hostname;
       }
     });
   </script>
