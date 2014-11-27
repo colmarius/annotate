@@ -4,12 +4,12 @@
 <polymer-element name="nn-annotable" attributes="nid baseapi">
   <template>
 
-  <core-ajax
-    id="get_comments"
-    url="{{baseapi}}/{{domain}}/{{nid}}/comments"
-    handleAs="json"
-    on-core-response="{{populateComments}}">
-  </core-ajax>
+    <core-ajax
+      id="get_comments"
+      url="{{baseapi}}/{{domain}}/{{nid}}/comments"
+      handleAs="json"
+      on-core-response="{{populateComments}}">
+    </core-ajax>
 
     <content></content>
 
