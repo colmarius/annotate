@@ -23,7 +23,7 @@ describe('comment resource', function() {
   });
 
   describe('GET /:domain/:resource/comments', function() {
-    xit('list all comments related to a :reference in a :domain', function(done) {
+    it('list all comments related to a :reference in a :domain', function(done) {
       Comment.create(
         {domain: 'example.com', reference: 42, author: 'gabriele.lana@example.com', text: '42'},
         function(err, comment) {
