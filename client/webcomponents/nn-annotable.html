@@ -1,6 +1,6 @@
 <link rel="import" href="../components/polymer/polymer.html">
 
-<polymer-element name="nn-annotable" attributes="nid">
+<polymer-element name="nn-annotable" attributes="nid baseapi">
   <template>
 
     <content></content>
@@ -20,6 +20,7 @@
       },
       ready: function() {
         this.domain = window.location.hostname;
+        this.baseapi = this.baseapi || window.location.origin;
       }
     });
   </script>
