@@ -1,6 +1,6 @@
 <link rel="import" href="../components/polymer/polymer.html">
 
-<polymer-element name="nn-annotable">
+<polymer-element name="nn-annotable" attributes="nid">
   <template>
 
     <content></content>
@@ -11,6 +11,13 @@
 
   </template>
   <script>
-    Polymer({});
+    Polymer({
+      attached: function() {
+        // In Polymer all attributes are properties of "this".
+        if (!this.nid) {
+          throw 'Attribute missing: nid';
+        }
+      }
+    });
   </script>
 </polymer-element>

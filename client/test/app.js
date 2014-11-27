@@ -19,7 +19,7 @@ describe('annotable', function(){
       expect(annotable.shadowRoot.querySelector('h3')).to.exist;
     });
 
-    xit('should have a nid attribute once attached', function(){
+    it('should have a nid attribute once attached', function(){
       expect(function(){ annotable.attached(); }).to.throw(/Attribute missing: nid/);
       annotable.nid = 1234;
       expect(function(){ annotable.attached(); }).to.not.throw();
