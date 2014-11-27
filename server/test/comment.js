@@ -36,7 +36,7 @@ describe('comment resource', function() {
       );
     });
 
-    xit('fails with 403 when request comes from wrong domain', function(done) {
+    it('fails with 403 when request comes from wrong domain', function(done) {
       request(app).get('/example.com/42/comments')
         .set('Host', 'evil.com')
         .expect(403)

@@ -30,7 +30,7 @@ function ensureRequestComesFromRightDomain(req, res, next) {
   res.status(403).send();
 }
 
-app.get('/:domain/:reference/comments', function(req, res) {
+app.get('/:domain/:reference/comments', ensureRequestComesFromRightDomain, function(req, res) {
   Comment.find(
     {
       domain: req.param('domain'),
