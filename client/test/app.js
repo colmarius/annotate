@@ -57,7 +57,7 @@ describe('annotable', function(){
 
       xit('dont send a new comment if author or text is not present', function(){
         setResponse({});
-        annotable.newComment({preventDefault: function(){}});
+        annotable.newComment({preventDefault: function(){}}); // Event mock.
         expect(annotable.message).to.be.equal('completa tutti i campi');
       });
 
