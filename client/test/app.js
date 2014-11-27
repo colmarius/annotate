@@ -85,14 +85,14 @@ describe('annotable', function(){
         expect(annotable.shadowRoot.querySelector('dd').textContent).to.contain('nice!');
       });
 
-      xit('displays a new comment when receiving a socket ping', function(done){
+      it('displays a new comment when receiving a socket ping', function(done){
         var websocket = annotable.shadowRoot.querySelector('#websocket');
         websocket._onMessage({
           author: 'someone',
           text: 'text from websocket'
         });
         setTimeout(function(){
-          expect(annotable.shadowRoot.querySelector('.row:last-child dd').textContent).to.contain('websocket');
+          expect(annotable.shadowRoot.querySelector('dd').textContent).to.contain('websocket');
           done();
         }, 200);
       });

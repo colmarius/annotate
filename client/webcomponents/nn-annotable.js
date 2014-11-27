@@ -4,6 +4,7 @@ Polymer({
     if (!this.nid) {
       throw 'Attribute missing: nid';
     }
+    this.$.websocket.addEventListener('message', this.updateComments.bind(this));
     this.$.get_comments.go();
   },
   ready: function() {
@@ -26,5 +27,8 @@ Polymer({
   resetForm: function() {
     this.author = "";
     this.text = "";
+  },
+  updateComments: function(evt) {
+    this.comments.push(evt.detail);
   }
 });

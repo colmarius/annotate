@@ -1,7 +1,8 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/core-ajax/core-ajax.html">
+<link rel="import" href="./x-primus.html">
 
-<polymer-element name="nn-annotable" attributes="nid baseapi">
+<polymer-element name="nn-annotable" attributes="nid baseapi connect">
   <template>
 
     <core-ajax
@@ -19,6 +20,13 @@
       params='{"author":"{{author}}","text":"{{text}}"}'
       on-core-response="{{resetForm}}">
     </core-ajax>
+
+    <x-primus
+      id="websocket"
+      baseapi="{{baseapi}}"
+      connect="{{connect}}"
+    >
+    </x-primus>
 
     <content></content>
 
