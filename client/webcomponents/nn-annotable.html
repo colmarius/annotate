@@ -30,6 +30,16 @@
         <input type="submit">
       </form>
     </section>
+    <section>
+      <template bind if="{{comments.length > 0}}">
+        <template repeat="{{comment, i in comments}}">
+          <dl>
+            <dt>{{comment.author}}</dt>
+            <dd>{{comment.text}}</dd>
+          </dl>
+        </template>
+      </template>
+    </section>
 
   </template>
   <script>
@@ -44,9 +54,10 @@
       ready: function() {
         this.domain = window.location.hostname;
         this.baseapi = this.baseapi || window.location.origin;
+        this.comments = [];
       },
-      populateComments: function() {
-        // not implemented
+      populateComments: function(evt) {
+        this.comments = evt.detail.response;
       },
       newComment: function(evt) {
         this.message = "";

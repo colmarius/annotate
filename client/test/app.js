@@ -71,7 +71,7 @@ describe('annotable', function(){
 
     });
 
-    xdescribe('template building', function(){
+    describe('template building', function(){
 
       beforeEach(function(done){
         setResponse([{author: 'sandro', text: 'nice!'}]);
@@ -81,7 +81,7 @@ describe('annotable', function(){
         setTimeout(done, 200); // computation time reqired for annotable end up in DOM
       });
 
-      xit('displays the list of retrieved comments', function(){
+      it('displays the list of retrieved comments', function(){
         expect(annotable.shadowRoot.querySelector('dd').textContent).to.contain('nice!');
       });
 
