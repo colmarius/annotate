@@ -29,14 +29,14 @@ describe('annotable', function(){
       expect(annotable.domain).to.be.equal(window.location.hostname);
     });
 
-    xdescribe('business logic', function(){
+    describe('business logic', function(){
 
       beforeEach(function(){
         setResponse([{user: 'sandro', text: 'nice!'}]);
         annotable.nid = 1234;
       });
 
-      xit('should retrieve the list of current comments', function(done){
+      it('should retrieve the list of current comments', function(done){
         annotable.populateComments = function(evt){
           expect(evt.detail.response[0].text).to.be.equal('nice!');
           done();

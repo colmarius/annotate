@@ -1,7 +1,15 @@
 <link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-ajax/core-ajax.html">
 
 <polymer-element name="nn-annotable" attributes="nid baseapi">
   <template>
+
+  <core-ajax
+    id="get_comments"
+    url="{{baseapi}}/{{domain}}/{{nid}}/comments"
+    handleAs="json"
+    on-core-response="{{populateComments}}">
+  </core-ajax>
 
     <content></content>
 
@@ -17,10 +25,14 @@
         if (!this.nid) {
           throw 'Attribute missing: nid';
         }
+        this.$.get_comments.go();
       },
       ready: function() {
         this.domain = window.location.hostname;
         this.baseapi = this.baseapi || window.location.origin;
+      },
+      populateComments: function() {
+        // not implemented
       }
     });
   </script>
