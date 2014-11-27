@@ -78,7 +78,7 @@ describe('annotable', function(){
         annotable.nid = 1234;
         annotable.connect = false;
         document.body.appendChild(annotable);
-        setTimeout(done, 200);
+        setTimeout(done, 200); // computation time reqired for annotable end up in DOM
       });
 
       xit('displays the list of retrieved comments', function(){
