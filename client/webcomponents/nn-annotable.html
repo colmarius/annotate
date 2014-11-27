@@ -41,6 +41,15 @@
       },
       populateComments: function() {
         // not implemented
+      },
+      newComment: function(evt) {
+        this.message = "";
+        evt.preventDefault();
+        if (!this.author || !this.text) {
+          this.message = "completa tutti i campi";
+          return;
+        }
+        this.$.new_comment.go();
       }
     });
   </script>
