@@ -11,6 +11,10 @@ app.get('/', function(req, res) {
   res.send('Hello World');
 });
 
+app.get('/it', function(req, res) {
+  res.send('Ciao Mondo');
+});
+
 app.get('/db', function(req, res) {
   res.status((mongoose.connection.readyState === 1) ? 200 : 503).send();
 });

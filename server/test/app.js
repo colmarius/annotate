@@ -17,6 +17,10 @@ describe('server', function() {
     request(app).get('/').expect(200, 'Hello World', done);
   });
 
+  it('knows italian', function(done) {
+    request(app).get('/it').expect(200, 'Ciao Mondo', done);
+  });
+
   describe('mongodb', function() {
 
     before(function(done) {
